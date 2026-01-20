@@ -1,0 +1,7 @@
+START TRANSACTION;
+
+UPDATE barang
+SET satuan = 20000
+WHERE id_barang = 1;
+
+COMMIT;
