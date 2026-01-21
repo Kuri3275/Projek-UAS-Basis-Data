@@ -1,0 +1,142 @@
+-- ===============================
+-- DATABASE
+-- ===============================
+CREATE DATABASE IF NOT EXISTS kopi_kenangan;
+USE kopi_kenangan;
+
+-- ===============================
+-- TABEL TRANSAKSI AWAL (DATA MENTAH)
+-- ===============================
+CREATE TABLE IF NOT EXISTS transaksi_awal (
+    no_order VARCHAR(10),
+    tanggal DATE,
+    nama_pelanggan VARCHAR(100),
+    nama_barang VARCHAR(100),
+    harga DECIMAL(10,2),
+    jumlah INT,
+    total DECIMAL(12,2)
+);
+
+-- ===============================
+-- TABEL MASTER PELANGGAN
+-- ===============================
+CREATE TABLE IF NOT EXISTS pelanggan (
+    id_pelanggan VARCHAR(10) PRIMARY KEY,
+    nama_pelanggan VARCHAR(100)
+);
+
+-- ===============================
+-- TABEL MASTER BARANG
+-- ===============================
+CREATE TABLE IF NOT EXISTS barang (
+    id_barang INT AUTO_INCREMENT PRIMARY KEY,
+    nama_barang VARCHAR(100),
+    satuan DECIMAL(10,2),
+    jumlah VARCHAR(20)
+);
+
+-- ===============================
+-- TABEL TRANSAKSI
+-- ===============================
+CREATE TABLE IF NOT EXISTS transaksi (
+    id_transaksi VARCHAR(10) PRIMARY KEY,
+    id_pelanggan VARCHAR(10),
+    id_barang INT,
+    tgl_nota DATE,
+    jumlah INT,
+    total_uang DECIMAL(12,2),
+    CONSTRAINT fk_pelanggan
+        FOREIGN KEY (id_pelanggan) REFERENCES pelanggan(id_pelanggan),
+    CONSTRAINT fk_barang
+        FOREIGN KEY (id_barang) REFERENCES barang(id_barang)
+);
+
+-- ===============================
+-- INSERT DATA MASTER (ANTI DUPLIKAT)
+-- ===============================
+INSERT IGNORE INTO pelanggan (id_pelanggan, nama_pelanggan)
+VALUES ('#A042', 'Yaya');
+
+INSERT IGNORE INTO barang (id_barang, nama_barang, satuan, jumlah)
+VALUES (1, 'Oatside Kopi Kenangan', 22000, 'cup');
+
+-- ===============================
+-- INSERT DATA TRANSAKSI (WAJIB ADA)
+-- ===============================
+INSERT IGNORE INTO transaksi
+(id_transaksi, id_pelanggan, id_barang, tgl_nota, jumlah, total_uang)
+VALUES
+('T001', '#A042', 1, CURDATE(), 1, 22000);
+
+-- ===============================
+-- QUERY JOIN
+-- ===============================
+SELECT 
+    p.nama_pelanggan,
+    b.nama_barang,
+    t.total_uang
+FROM transaksi t
+JOIN pelanggan p ON t.id_pelanggan = p.id_pelanggan
+JOIN barang b ON t.id_barang = b.id_barang;
+
+-- ===============================
+-- AGREGASI COUNT + GROUP BY
+-- ===============================
+SELECT 
+    p.nama_pelanggan,
+    COUNT(*) AS jumlah_transaksi
+FROM transaksi t
+JOIN pelanggan p ON t.id_pelanggan = p.id_pelanggan
+GROUP BY p.nama_pelanggan;
+
+-- ===============================
+-- AGREGASI SUM + HAVING
+-- ===============================
+SELECT 
+    p.nama_pelanggan,
+    SUM(t.total_uang) AS total_belanja
+FROM transaksi t
+JOIN pelanggan p ON t.id_pelanggan = p.id_pelanggan
+GROUP BY p.nama_pelanggan
+HAVING SUM(t.total_uang) > 20000;
+
+-- ===============================
+-- SUBQUERY
+-- ===============================
+SELECT 
+    nama_barang, 
+    satuan
+FROM barang
+WHERE id_barang IN (
+    SELECT id_barang
+    FROM transaksi
+);
+
+-- ===============================
+-- VIEW LAPORAN TRANSAKSI
+-- ===============================
+CREATE OR REPLACE VIEW view_laporan_transaksi AS
+SELECT
+    t.id_transaksi,
+    p.nama_pelanggan,
+    b.nama_barang,
+    t.jumlah,
+    t.total_uang,
+    t.tgl_nota
+FROM transaksi t
+JOIN pelanggan p ON t.id_pelanggan = p.id_pelanggan
+JOIN barang b ON t.id_barang = b.id_barang;
+
+-- CEK VIEW
+SELECT * FROM view_laporan_transaksi;
+
+-- ===============================
+-- TRANSACTION CONTROL
+-- ===============================
+START TRANSACTION;
+
+UPDATE barang
+SET satuan = 20000
+WHERE id_barang = 1;
+
+COMMIT;
