@@ -29,7 +29,6 @@ serta penyajian informasi dalam bentuk rekapitulasi data.
 - Pengelolaan data produk kopi
 - Pencatatan transaksi pemesanan dan detail transaksi
 - Pengolahan data menggunakan SQL
-- Tidak mencakup pengembangan antarmuka aplikasi
 
 ## Tools Yang Digunakan
 - DBMS : MySQL
