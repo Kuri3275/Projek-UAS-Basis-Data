@@ -1,39 +1,70 @@
-# PERANCANGAN DAN IMPLEMENTASI BASIS DATA
-## SISTEM PEMESANAN KOPI KENANGAN
+#  PERANCANGAN DAN IMPLEMENTASI BASIS DATA TRANSAKSI  
+## SISTEM PEMESANAN KOPI KENANGAN  
 
-## Gambaran Umum Sistem
-Sistem Pemesanan Kopi Kenangan merupakan sistem basis data yang dirancang
-untuk mengelola data transaksi pemesanan kopi secara terstruktur dan
-terintegrasi. Sistem ini mencakup pengelolaan data pelanggan, data produk
-kopi, serta transaksi pemesanan dan pembayaran.
 
-Perancangan basis data dilakukan menggunakan konsep basis data relasional
-dengan menerapkan normalisasi hingga bentuk normal ketiga (3NF) untuk
-mengurangi redundansi data dan menjaga konsistensi antar tabel. Struktur
-basis data divisualisasikan melalui Entity Relationship Diagram (ERD)
-sebagai acuan dalam implementasi sistem.
+##  Deskripsi Proyek
+Proyek ini merupakan tugas Ujian Akhir Semester pada mata kuliah **Pemrograman Basis Data**
+yang bertujuan untuk merancang dan mengimplementasikan **basis data transaksi pada Sistem
+Pemesanan Kopi Kenangan**.
 
-Sistem ini mendukung pengolahan data menggunakan query Structured Query
-Language (SQL) untuk pencatatan transaksi, pengambilan data terintegrasi,
-serta penyajian informasi dalam bentuk rekapitulasi data.
+Sistem basis data ini dirancang untuk mengelola data pelanggan, produk kopi, serta transaksi
+pemesanan secara terstruktur dengan menerapkan konsep **basis data relasional**.
+Pengembangan proyek difokuskan pada perancangan struktur database, relasi antar tabel,
+visualisasi **Entity Relationship Diagram (ERD)**, serta implementasi database menggunakan
+MySQL, tanpa pengembangan antarmuka aplikasi.
 
-## Tujuan Sistem
-- Mengelola data pemesanan kopi secara terstruktur
-- Menerapkan normalisasi data hingga 3NF
-- Menyusun ERD sebagai model relasi data
-- Mengimplementasikan basis data menggunakan DBMS MySQL
-- Menguji query SQL (DDL, DML, TCL, JOIN, GROUP BY, HAVING)
 
-## Ruang Lingkup Sistem
-- Pengelolaan data pelanggan
-- Pengelolaan data produk kopi
-- Pencatatan transaksi pemesanan dan detail transaksi
-- Pengolahan data menggunakan SQL
+##  Latar Belakang
+Dalam sistem pemesanan kopi, pengelolaan data pelanggan, produk, dan transaksi yang masih
+dilakukan secara manual atau tidak terstruktur dapat menimbulkan kesalahan pencatatan,
+duplikasi data, serta kesulitan dalam pembuatan laporan.
+
+Oleh karena itu, diperlukan sebuah basis data yang dirancang dengan baik agar data dapat
+tersimpan secara konsisten, saling terhubung, dan mudah diolah. Sistem Pemesanan Kopi
+Kenangan ini dirancang sebagai solusi pengelolaan data transaksi yang terstruktur dan efisien.
+
+
+##  Tujuan Sistem
+- Mengelola data transaksi pemesanan kopi secara terstruktur  
+- Menerapkan normalisasi data hingga **Third Normal Form (3NF)**  
+- Merancang **Entity Relationship Diagram (ERD)** sebagai model konseptual basis data  
+- Mengimplementasikan basis data menggunakan **MySQL**  
+- Menerapkan konsep basis data relasional sesuai materi perkuliahan  
+
+
+##  Ruang Lingkup Sistem
+- Pengelolaan data pelanggan  
+- Pengelolaan data produk kopi  
+- Pencatatan transaksi pemesanan dan detail transaksi  
+- Pengolahan data transaksi menggunakan SQL  
 
 ## Tools Yang Digunakan
 - DBMS : MySQL
 - Bahasa Query : SQL
 - Tools Pendukung : MySQL Workbench, phpMyAdmin, XAMPP, Text Editor
+
+##  Struktur dan Implementasi Database
+Implementasi basis data dilakukan menggunakan **MySQL** dengan bantuan
+**MySQL Workbench** dan **phpMyAdmin**. Struktur database dibuat berdasarkan
+hasil perancangan ERD dan proses normalisasi data.
+
+Basis data terdiri dari beberapa tabel utama yang saling terhubung menggunakan
+**Primary Key** dan **Foreign Key** untuk menjaga integritas serta konsistensi data.
+
+###  Tabel Utama
+- **Pelanggan** → menyimpan data pelanggan  
+- **Produk** → menyimpan data menu kopi  
+- **Transaksi** → menyimpan data pemesanan  
+- **Detail Transaksi** → menyimpan rincian produk pada setiap transaksi  
+- **Pembayaran** → menyimpan informasi pembayaran  
+
+##  Entity Relationship Diagram (ERD)
+Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis data
+dan hubungan antar entitas dalam Sistem Pemesanan Kopi Kenangan.  
+ERD ini menjadi acuan utama dalam pembuatan tabel dan relasi database.
+
+ **ERD Sistem Pemesanan Kopi Kenangan**
+```md
 
 ## Dosen Pengampu
 Ridwan Dwi Irawan, M.Kom
@@ -43,4 +74,27 @@ Ridwan Dwi Irawan, M.Kom
 - Hidayatul Fateha Khoirunnisa (240103191)
 - Hilda Nur Abidah (240103250)
 - Maulana Usamah Rochsyad (240103195)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
