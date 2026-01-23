@@ -51,6 +51,13 @@ hasil perancangan ERD dan proses normalisasi data.
 Basis data terdiri dari beberapa tabel utama yang saling terhubung menggunakan
 **Primary Key** dan **Foreign Key** untuk menjaga integritas serta konsistensi data.
 
+## Implementasi Database
+Database diimplementasikan menggunakan **MySQL** dengan fitur:
+- **DDL** → `CREATE DATABASE`, `CREATE TABLE`
+- **DML** → `INSERT`, `SELECT`, `UPDATE`, `DELETE`
+- **TCL** → `COMMIT`, `ROLLBACK`
+- **Query lanjutan** → `JOIN`, `GROUP BY`, `HAVING`, agregasi
+
 ###  Tabel Utama
 - **Pelanggan** → menyimpan data pelanggan  
 - **Produk** → menyimpan data menu kopi  
@@ -58,31 +65,38 @@ Basis data terdiri dari beberapa tabel utama yang saling terhubung menggunakan
 - **Detail Transaksi** → menyimpan rincian produk pada setiap transaksi  
 - **Pembayaran** → menyimpan informasi pembayaran  
 
-##  Entity Relationship Diagram (ERD)
-Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis data
-dan hubungan antar entitas dalam Sistem Pemesanan Kopi Kenangan.  
-ERD ini menjadi acuan utama dalam pembuatan tabel dan relasi database.
+## Poster
+Poster Sistem Pemesanan Kopi Kenangan menampilkan ringkasan sistem, struktur basis data,
+ERD, serta relasi antar tabel sebagai gambaran umum perancangan database.
 
- **ERD Sistem Pemesanan Kopi Kenangan**
-```md
+![Poster Proyek](poster.jpeg)
+
+## Tampilan Implementasi Database
+Implementasi basis data Sistem Pemesanan Kopi Kenangan dilakukan menggunakan MySQL
+dan diuji melalui phpMyAdmin. Seluruh tabel telah dibuat sesuai dengan ERD dan
+dilengkapi dengan Primary Key serta Foreign Key.
+
+![Tampilan Database](db_kopi.png)
+
+## Entity Relationship Diagram (ERD)
+Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis data
+dan hubungan antar entitas pada Sistem Pemesanan Kopi Kenangan. ERD ini menjadi acuan
+utama dalam pembuatan tabel dan relasi database.
+
+![ERD Sistem](erd.jpeg)
+
+
 
 ## Dosen Pengampu
-Ridwan Dwi Irawan, M.Kom
+**Ridwan Dwi Irawan, M.Kom**
+
+---
 
 ## Anggota Kelompok
-- Gilly Achmad Fadhlurrahman (240103190)
-- Hidayatul Fateha Khoirunnisa (240103191)
+- Gilly Achmad Fadhlurrahman (240103190)  
+- Hidayatul Fateha Khoirunnisa (240103191)  
 - Hilda Nur Abidah (240103250)
-- Maulana Usamah Rochsyad (240103195)
-
-
-
-
-
-
-
-
-
+- Maulana Usamah Rochsyad (240103195)  
 
 
 
