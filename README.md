@@ -87,6 +87,16 @@ utama dalam pembuatan tabel dan relasi database.
 
 ![erd](https://github.com/user-attachments/assets/de05cc54-67bf-4765-8b5b-b2f50cb2879b)
 
+## Relasi Antar Tabel
+Relasi antar tabel pada Sistem Pemesanan Kopi Kenangan dirancang untuk memastikan
+setiap data transaksi saling terhubung dengan baik dan tidak terjadi pengulangan
+data yang tidak perlu. Hubungan antar tabel disusun berdasarkan alur proses
+pemesanan kopi, mulai dari pelanggan melakukan pemesanan hingga proses pembayaran.
+
+
+![relasi tabel](https://github.com/user-attachments/assets/ec70a416-9945-43ac-b401-0d25876b6905)
+
+
 
 ## Dosen Pengampu
 **Ridwan Dwi Irawan, M.Kom**
