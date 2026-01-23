@@ -69,22 +69,23 @@ Database diimplementasikan menggunakan **MySQL** dengan fitur:
 Poster Sistem Pemesanan Kopi Kenangan menampilkan ringkasan sistem, struktur basis data,
 ERD, serta relasi antar tabel sebagai gambaran umum perancangan database.
 
-![Poster Proyek](poster.jpeg)
+![poster](https://github.com/user-attachments/assets/aac47e0b-8437-4c40-8ea4-7713629bf24a)
+
 
 ## Tampilan Implementasi Database
 Implementasi basis data Sistem Pemesanan Kopi Kenangan dilakukan menggunakan MySQL
 dan diuji melalui phpMyAdmin. Seluruh tabel telah dibuat sesuai dengan ERD dan
 dilengkapi dengan Primary Key serta Foreign Key.
 
-![Tampilan Database](db_kopi.png)
+<img width="1365" height="767" alt="db kopi" src="https://github.com/user-attachments/assets/a53322fe-a1a3-4f74-a183-c27a45cc9edc" />
+
 
 ## Entity Relationship Diagram (ERD)
 Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis data
 dan hubungan antar entitas pada Sistem Pemesanan Kopi Kenangan. ERD ini menjadi acuan
 utama dalam pembuatan tabel dan relasi database.
 
-![ERD Sistem](erd.jpeg)
-
+![erd](https://github.com/user-attachments/assets/de05cc54-67bf-4765-8b5b-b2f50cb2879b)
 
 
 ## Dosen Pengampu
